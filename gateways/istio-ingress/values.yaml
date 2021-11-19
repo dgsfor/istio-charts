@@ -3,9 +3,9 @@
 
 gateways:
   istio-ingressgateway:
-    name: istio-ingressgateway
+    name: istio-ingressgateway-hongkong
     labels:
-      app: istio-ingressgateway
+      app: istio-ingressgateway-hongkong
       istio: ingressgateway
     ports:
     ## You can add custom gateway ports in user values overrides, but it must include those ports since helm replaces.
