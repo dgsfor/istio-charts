@@ -57,6 +57,7 @@ spec:
         prometheus.io/scrape: "true"
         prometheus.io/path: "/stats/prometheus"
         {{- end }}
+        sidecar.istio.io/extraStatTags: request_method
         sidecar.istio.io/inject: "false"
 {{- if $gateway.podAnnotations }}
 {{ toYaml $gateway.podAnnotations | indent 8 }}
@@ -201,6 +202,9 @@ spec:
             valueFrom:
               fieldRef:
                 fieldPath: spec.serviceAccountName
+          - name: ISTIO_METAJSON_ANNOTATIONS
+            value: |
+              {"sidecar.istio.io/extraStatTags":"request_method"}
           - name: ISTIO_META_WORKLOAD_NAME
             value: {{ $gateway.name }}
           - name: ISTIO_META_OWNER

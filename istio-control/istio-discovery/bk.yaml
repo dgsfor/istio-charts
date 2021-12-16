@@ -155,11 +155,10 @@ telemetry:
         gateway:
           disable_host_header_fallback: true
           metrics:
-            - name: requests_total
-              dimensions:
-                destination_port: string(destination.port)
+            - dimensions:
                 request_host: request.host
                 request_method: request.method
+                source_cluster: node.metadata['CLUSTER_ID']
               tags_to_remove:
                 - connection_security_policy
                 - destination_app
