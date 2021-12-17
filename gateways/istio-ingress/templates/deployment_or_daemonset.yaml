@@ -56,8 +56,8 @@ spec:
         prometheus.io/port: "15020"
         prometheus.io/scrape: "true"
         prometheus.io/path: "/stats/prometheus"
-        {{- end }}
         sidecar.istio.io/extraStatTags: request_method
+        {{- end }}
         sidecar.istio.io/inject: "false"
 {{- if $gateway.podAnnotations }}
 {{ toYaml $gateway.podAnnotations | indent 8 }}
