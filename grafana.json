@@ -981,9 +981,9 @@
         "allValue": ".*",
         "current": {
           "selected": true,
-          "text": "preasia-east2-admin.eve.meitu.com",
+          "text": "a.baidu.com",
           "value": [
-            "preasia-east2-admin.eve.meitu.com"
+            "a.baidu.com"
           ]
         },
         "datasource": "$datasource",
